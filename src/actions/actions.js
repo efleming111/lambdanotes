@@ -10,7 +10,6 @@ export const APP_HEIGHT = 'APP_HEIGHT';
 export const fetchNotes = ()=>{
     return dispatch=>{
         dispatch({type: FETCHING});
-        //axios.get('https://fe-notes.herokuapp.com/note/get/all')
         axios.get('https://ericsnotesbackend.herokuapp.com/api/notes')
         .then(response=>{
             dispatch({
@@ -31,7 +30,6 @@ export const fetchNotes = ()=>{
 export const addNote = (note, notes)=>{
     return dispatch=>{
         dispatch({type: FETCHING});
-        //axios.post('https://fe-notes.herokuapp.com/note/create', note)
         axios.post('https://ericsnotesbackend.herokuapp.com/api/notes', note)
         .then(response=>{
             const newNote = Object.assign({}, note, {'id': response.data.id});
@@ -54,7 +52,6 @@ export const addNote = (note, notes)=>{
 export const deleteNote = (id, notes)=>{
     return dispatch=>{
         dispatch({type: FETCHING});
-        //axios.delete(`https://fe-notes.herokuapp.com/note/delete/${id}`)
         axios.delete(`https://ericsnotesbackend.herokuapp.com/api/notes/${id}`)
         .then(response=>{
             const index = notes.findIndex(note=>note.id===id);
@@ -75,7 +72,6 @@ export const deleteNote = (id, notes)=>{
 export const editNote = (id, note, notes)=>{
     return dispatch=>{
         dispatch({type: FETCHING});
-        //axios.put(`https://fe-notes.herokuapp.com/note/edit/${id}`, note)
         axios.put(`https://ericsnotesbackend.herokuapp.com/api/notes/${id}`, note)
         .then(response=>{
             const index = notes.findIndex(note=>note.id===id)
