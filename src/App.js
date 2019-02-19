@@ -10,6 +10,7 @@ import NotesList from './components/NotesList';
 import CreateNote from './components/CreateNote';
 import DisplayNote from './components/DisplayNote';
 import EditNote from './components/EditNote';
+import Login from './components/Login';
 
 const AppContainer = styled.div`
   display: flex;
@@ -67,9 +68,10 @@ class App extends Component{
         </NavContainer>
   
         <BodyContainer>
-          <Route exact path="/" render={props=><NotesList {...props} updateHeight={this.updateHeight}/>}/>
+          <Route exact path="/" render={props=><Login {...props}/>}/>
+          <Route exact path="/notes" render={props=><NotesList {...props}/>}/>
           <Route path="/create-note" render={props=><CreateNote {...props}/>}/>
-          <Route path="/note/:id" render={props=><DisplayNote {...props}/>}/>
+          <Route path="/notes/:id" render={props=><DisplayNote {...props}/>}/>
           <Route path="/edit/:id" render={props=><EditNote {...props}/>}/>
         </BodyContainer>
         

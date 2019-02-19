@@ -41,8 +41,8 @@ const NavSideBarButtons = styled.div`
 
 const NavSideBar = props=>{
 
-    function appHome(){
-        props.history.push('/');
+    function appNotes(){
+        props.history.push('/notes');
     }
 
     function appCreateNote(){
@@ -56,7 +56,7 @@ const NavSideBar = props=>{
                 <h1>Notes</h1>
             </NavSideBarHeader>
             <NavSideBarButtons>
-                <button onClick={appHome}>View Your Notes</button>
+                <button onClick={appNotes}>View Your Notes</button>
                 <button onClick={appCreateNote}>+ Create New Note</button>
             </NavSideBarButtons>
         </NavSideBarContainer>

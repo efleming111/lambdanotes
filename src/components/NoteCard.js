@@ -41,7 +41,7 @@ const NoteCard = props=>{
     function selectNote(event){
         event.preventDefault();
         props.setCurrentNote(props.note);
-        props.history.push(`/note/${props.note.id}`);
+        props.history.push(`/notes/${props.note.id}`);
     }
     
     return(
