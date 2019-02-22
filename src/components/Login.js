@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import axios from 'axios';
-import styled from 'styled-components';
+// import axios from 'axios';
+// import styled from 'styled-components';
+
+// This component is not work on the database side!!!!
 
 class Login extends Component{
     constructor(props){
@@ -11,15 +13,20 @@ class Login extends Component{
         }
     }
 
+    componentDidMount(){
+        // Hack to bypass this component
+        this.props.history.push(`/notes`);
+    }
+
     handleLogin = event=>{
         event.preventDefault();
-        axios.get('https://ericsnotesbackend.herokuapp.com/auth/google')
-        .then(data=>{
-            console.log(data.data.message);
-        })
-        .catch(error=>{
-            console.log('Something went wrong');
-        })
+        // axios.get('https://ericsnotesbackend.herokuapp.com/auth/google')
+        // .then(data=>{
+        //     console.log(data.data.message);
+        // })
+        // .catch(error=>{
+        //     console.log('Something went wrong');
+        // })
     }
 
     render(){
